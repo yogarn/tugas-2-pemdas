@@ -12,29 +12,26 @@ public class App {
     static int banyakSiswa = 0;
     /* menyimpan banyak matpel */
     static int banyakSiswaMatpel = 0;
-
-    //satria 
     
     public static String konversiNilai(double nilai) {
-
+        //satria
     }
 
     public static void tambahSiswa(String nama) {
-
+        //satria
     }
 
     public static void tambahMatpel(String matpel) {
-
+        //satria
     }
 
     public static int cariSiswa(String nama) {
-
+        //conflict
     }
 
     public static int cariMatpel(String matpel) {
-
+        //conflict
     }
-    // SAMPE SINI
     
     /*
     nama: nama siswa
@@ -43,26 +40,26 @@ public class App {
     nilai: nilai matpel tiap semester
     */
     public static void isiDataSiswa(String nama, int semester, String matpel, int nilai) {
-
+        //yoga
     }
 
     public static void printSiswa() {
-
+        //satria
     }
 
     public static void printRaportSiswa(String nama) {
-
+        //satria
     }
 
     public static int cariJuara(int semester) {
-
+        //yoga
     }
 
     public static void hitungNilai(int semester) {
-
+        //yoga
     }
 
     public static void main(String[] args) {
-        
+        //yoga
     }
 }
