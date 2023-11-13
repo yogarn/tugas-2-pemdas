@@ -26,11 +26,11 @@ public class App {
     }
 
     public static int cariSiswa(String nama) {
-        //conflict
+        //yoga
     }
 
     public static int cariMatpel(String matpel) {
-        //conflict
+        //yoga
     }
     
     /*
