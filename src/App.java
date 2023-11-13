@@ -21,22 +21,22 @@ public class App {
     static int banyakSiswaMatpel = 0;
 
     public static String konversiNilai(double nilai) {
-        if(nilai > 80){
+        if (nilai > 80) {
             return "A";
-        } else if(nilai > 75){
+        } else if (nilai > 75) {
             return "B+";
-        } else if(nilai > 69){
+        } else if (nilai > 69) {
             return "B";
-        } else if(nilai > 65){
-            return "C+"
-        } else if(nilai > 59){
-            return "C"
-        } else if(nilai > 55){
+        } else if (nilai > 65) {
+            return "C+";
+        } else if (nilai > 59) {
+            return "C";
+        } else if (nilai > 55) {
             return "D+";
-        } else if(nilai > 40){
-            return "D"
+        } else if (nilai > 40) {
+            return "D";
         } else {
-            return "E"
+            return "E";
         }
     }
 
@@ -46,11 +46,11 @@ public class App {
     }
 
     public static void tambahMatpel(String matpel) {
-       for(int i = 0;i < MAX_SISWA; i++){
-           for(int j = 0; j < MAX_SEMESTER; j++){
-               siswaMatpel[i][j][banyakSiswaMatpel] = matpel;
-           }
-       }
+        for (int i = 0; i < MAX_SISWA; i++) {
+            for (int j = 0; j < MAX_SEMESTER; j++) {
+                siswaMatpel[i][j][banyakSiswaMatpel] = matpel;
+            }
+        }
         banyakSiswaMatpel++;
     }
 
@@ -86,22 +86,44 @@ public class App {
 
     public static void printSiswa() {
         System.out.print("SISWA: ");
-       for(int i = 0; i < banyakSiswa; i++){
-           System.out.print(siswa[i] + " ");
-       }
+        for (int i = 0; i < banyakSiswa; i++) {
+            System.out.print(siswa[i] + " ");
+        }
         System.out.println();
     }
 
     public static void printMatpel() {
         System.out.print("MATA PELAJARAN: ");
-       for(int i = 0; i < banyakSiswaMatpel; i++){
-           System.out.print(siswaMatpel[0][0][i] + " ");
-       }
+        for (int i = 0; i < banyakSiswaMatpel; i++) {
+            System.out.print(siswaMatpel[0][0][i] + " ");
+        }
         System.out.println();
     }
 
     public static void printRaportSiswa(String nama) {
         // satria
+        // - ada 47
+        // 20 mata pelajaran
+        // 10 nilai
+        // 17 nilai huruf
+        System.out.println(">> BEGIN RAPORT <<");
+        System.out.printf("%nNama: %s%n", nama);
+        System.out.println("Semester: Ganjil");
+        System.out.printf("%-20s|%10s|%15s%n", "Mata Pelajaran", "Nilai", "Nilai Huruf");
+        System.out.println("-".repeat(47));
+        for (int j = 0; j < banyakSiswaMatpel; j++) {
+            System.out.printf("%-20s|%10.1f|%15s%n", siswaMatpel[cariSiswa(nama)][0][j],
+                    siswaMatpelNilai[cariSiswa(nama)][0][j], konversiNilai(siswaMatpelNilai[cariSiswa(nama)][0][j]));
+        }
+        System.out.println();
+        System.out.println("Semester: Genap");
+        System.out.printf("%-20s|%10s|%15s%n", "Mata Pelajaran", "Nilai", "Nilai Huruf");
+        System.out.println("-".repeat(47));
+        for (int j = 0; j < banyakSiswaMatpel; j++) {
+            System.out.printf("%-20s|%10.1f|%15s%n", siswaMatpel[cariSiswa(nama)][1][j],
+                    siswaMatpelNilai[cariSiswa(nama)][1][j], konversiNilai(siswaMatpelNilai[cariSiswa(nama)][1][j]));
+        }
+        System.out.printf("%n>> END RAPORT <<%n");
     }
 
     public static int cariJuara(int semester) {
@@ -160,7 +182,7 @@ public class App {
         String matpel, semester, nama, perintah;
         int semesterAngka, nilai;
 
-        do {
+        while (true) {
             perintah = input.next();
             if (perintah.equals("SISWA")) {
                 nama = input.next();
@@ -203,7 +225,8 @@ public class App {
                 }
                 hitungNilai(semesterAngka);
             }
-        } while (!(perintah.equals("")));
+        }
+
         input.close();
     }
 }
