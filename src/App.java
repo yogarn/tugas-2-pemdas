@@ -1,28 +1,35 @@
+import java.util.Scanner;
+
 public class App {
     final static int MAX_SISWA = 10;
     final static int MAX_MATPEL = 10;
     final static int MAX_SEMESTER = 2;
     /* menyimpan nama siswa */
     static String[] siswa = new String[MAX_SISWA];
-    /* menyimpan nama matpel per siswa tiap semester, semester ganjil = 0, genap = 1 */
+    /*
+     * menyimpan nama matpel per siswa tiap semester, semester ganjil = 0, genap = 1
+     */
     static String[][][] siswaMatpel = new String[MAX_SISWA][MAX_SEMESTER][MAX_MATPEL];
-    /* menyimpan nilai matpel per siswa tiap semester, semester ganjil = 0; genap = 1 */
+    /*
+     * menyimpan nilai matpel per siswa tiap semester, semester ganjil = 0; genap =
+     * 1
+     */
     static double[][][] siswaMatpelNilai = new double[MAX_SISWA][MAX_SEMESTER][MAX_MATPEL];
     /* menyimpan banyak siswa */
     static int banyakSiswa = 0;
     /* menyimpan banyak matpel */
     static int banyakSiswaMatpel = 0;
-    
+
     public static String konversiNilai(double nilai) {
-        //satria
+        // satria
     }
 
     public static void tambahSiswa(String nama) {
-        //satria
+        // satria
     }
 
     public static void tambahMatpel(String matpel) {
-        //satria
+        // satria
     }
 
     public static int cariSiswa(String nama) {
@@ -44,34 +51,129 @@ public class App {
         }
         return indeksMatpel;
     }
-    
+
     /*
-    nama: nama siswa
-    semester: semester, 0 untuk ganjil, 1 untuk genap
-    matpel: nama matpel
-    nilai: nilai matpel tiap semester
-    */
+     * nama: nama siswa
+     * semester: semester, 0 untuk ganjil, 1 untuk genap
+     * matpel: nama matpel
+     * nilai: nilai matpel tiap semester
+     */
     public static void isiDataSiswa(String nama, int semester, String matpel, int nilai) {
-        //yoga
+        siswaMatpelNilai[cariSiswa(nama)][semester][cariMatpel(matpel)] = nilai;
     }
 
     public static void printSiswa() {
-        //satria
+        // satria
+    }
+
+    public static void printMatpel() {
+        // satria
     }
 
     public static void printRaportSiswa(String nama) {
-        //satria
+        // satria
     }
 
     public static int cariJuara(int semester) {
-        //yoga
+        double meanTerbesar = 0.0;
+        double totalNilai = 0.0;
+        int juara = 0;
+        for (int i = 0; i < banyakSiswa; i++) {
+            totalNilai = 0;
+            for (int j = 0; j < banyakSiswaMatpel; j++) {
+                totalNilai += siswaMatpelNilai[i][semester][j];
+            }
+            if ((totalNilai / banyakSiswaMatpel) > meanTerbesar) {
+                meanTerbesar = (totalNilai / banyakSiswaMatpel);
+                juara = i;
+            }
+        }
+        return juara;
     }
 
     public static void hitungNilai(int semester) {
-        //yoga
+        String[] grade = { "A", "B+", "B", "C+", "C", "D+", "D", "E" };
+        int[] gradeCount = new int[8];
+        for (int i = 0; i < banyakSiswa; i++) {
+            gradeCount = new int[8];
+            for (int j = 0; j < banyakSiswaMatpel; j++) {
+                if (konversiNilai(siswaMatpelNilai[i][semester][j]).equals("A")) {
+                    gradeCount[0]++;
+                } else if (konversiNilai(siswaMatpelNilai[i][semester][j]).equals("B+")) {
+                    gradeCount[1]++;
+                } else if (konversiNilai(siswaMatpelNilai[i][semester][j]).equals("B")) {
+                    gradeCount[2]++;
+                } else if (konversiNilai(siswaMatpelNilai[i][semester][j]).equals("C+")) {
+                    gradeCount[3]++;
+                } else if (konversiNilai(siswaMatpelNilai[i][semester][j]).equals("C")) {
+                    gradeCount[4]++;
+                } else if (konversiNilai(siswaMatpelNilai[i][semester][j]).equals("D+")) {
+                    gradeCount[5]++;
+                } else if (konversiNilai(siswaMatpelNilai[i][semester][j]).equals("D")) {
+                    gradeCount[6]++;
+                } else if (konversiNilai(siswaMatpelNilai[i][semester][j]).equals("E")) {
+                    gradeCount[7]++;
+                }
+            }
+            System.out.print(siswa[i] + " ");
+            for (int j = 0; j < 8; j++) {
+                if (gradeCount[j] != 0) {
+                    System.out.printf("%s:%d ", grade[j], gradeCount[j]);
+                }
+            }
+            System.out.println();
+        }
     }
 
     public static void main(String[] args) {
-        //yoga
+        Scanner input = new Scanner(System.in);
+        String matpel, semester, nama, perintah;
+        int semesterAngka, nilai;
+
+        do {
+            perintah = input.next();
+            if (perintah.equals("SISWA")) {
+                nama = input.next();
+                tambahSiswa(nama);
+            } else if (perintah.equals("MATPEL")) {
+                matpel = input.next();
+                tambahMatpel(matpel);
+            } else if (perintah.equals("NILAI")) {
+                nama = input.next();
+                semester = input.next();
+                matpel = input.next();
+                nilai = input.nextInt();
+                if (semester.equals("GANJIL")) {
+                    semesterAngka = 0;
+                } else {
+                    semesterAngka = 1;
+                }
+                isiDataSiswa(nama, semesterAngka, matpel, nilai);
+            } else if (perintah.equals("PRINT_SISWA")) {
+                printSiswa();
+            } else if (perintah.equals("PRINT_MATPEL")) {
+                printMatpel();
+            } else if (perintah.equals("PRINT_RAPORT")) {
+                nama = input.next();
+                printRaportSiswa(siswa[cariSiswa(nama)]);
+            } else if (perintah.equals("CARI_JUARA")) {
+                semester = input.next();
+                if (semester.equals("GANJIL")) {
+                    semesterAngka = 0;
+                } else {
+                    semesterAngka = 1;
+                }
+                System.out.printf("JUARA_1 %s %s%n", semester, siswa[cariJuara(semesterAngka)]);
+            } else if (perintah.equals("HITUNG_NILAI")) {
+                semester = input.next();
+                if (semester.equals("GANJIL")) {
+                    semesterAngka = 0;
+                } else {
+                    semesterAngka = 1;
+                }
+                hitungNilai(semesterAngka);
+            }
+        } while (!(perintah.equals("")));
+        input.close();
     }
 }
