@@ -224,6 +224,8 @@ public class App {
                     semesterAngka = 1;
                 }
                 hitungNilai(semesterAngka);
+            } else {
+                break;
             }
         }
 
