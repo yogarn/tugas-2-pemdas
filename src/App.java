@@ -21,15 +21,37 @@ public class App {
     static int banyakSiswaMatpel = 0;
 
     public static String konversiNilai(double nilai) {
-        // satria
+        if(nilai > 80){
+            return "A";
+        } else if(nilai > 75){
+            return "B+";
+        } else if(nilai > 69){
+            return "B";
+        } else if(nilai > 65){
+            return "C+"
+        } else if(nilai > 59){
+            return "C"
+        } else if(nilai > 55){
+            return "D+";
+        } else if(nilai > 40){
+            return "D"
+        } else {
+            return "E"
+        }
     }
 
     public static void tambahSiswa(String nama) {
-        // satria
+        siswa[banyakSiswa] = nama;
+        banyakSiswa++;
     }
 
     public static void tambahMatpel(String matpel) {
-        // satria
+       for(int i = 0;i < MAX_SISWA; i++){
+           for(int j = 0; j < MAX_SEMESTER; j++){
+               siswaMatpel[i][j][banyakSiswaMatpel] = matpel;
+           }
+       }
+        banyakSiswaMatpel++;
     }
 
     public static int cariSiswa(String nama) {
@@ -63,11 +85,19 @@ public class App {
     }
 
     public static void printSiswa() {
-        // satria
+        System.out.print("SISWA: ");
+       for(int i = 0; i < banyakSiswa; i++){
+           System.out.print(siswa[i] + " ");
+       }
+        System.out.println();
     }
 
     public static void printMatpel() {
-        // satria
+        System.out.print("MATA PELAJARAN: ");
+       for(int i = 0; i < banyakSiswaMatpel; i++){
+           System.out.print(siswaMatpel[0][0][i] + " ");
+       }
+        System.out.println();
     }
 
     public static void printRaportSiswa(String nama) {
