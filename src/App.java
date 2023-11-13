@@ -101,11 +101,6 @@ public class App {
     }
 
     public static void printRaportSiswa(String nama) {
-        // satria
-        // - ada 47
-        // 20 mata pelajaran
-        // 10 nilai
-        // 17 nilai huruf
         System.out.println(">> BEGIN RAPORT <<");
         System.out.printf("%nNama: %s%n", nama);
         System.out.println("Semester: Ganjil");
