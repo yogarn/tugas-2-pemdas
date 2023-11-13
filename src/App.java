@@ -26,11 +26,23 @@ public class App {
     }
 
     public static int cariSiswa(String nama) {
-        //yoga
+        int indeksSiswa = banyakSiswa;
+        for (int i = 0; i < banyakSiswa; i++) {
+            if (siswa[i].equals(nama)) {
+                indeksSiswa = i;
+            }
+        }
+        return indeksSiswa;
     }
 
     public static int cariMatpel(String matpel) {
-        //yoga
+        int indeksMatpel = banyakSiswaMatpel;
+        for (int i = 0; i < banyakSiswaMatpel; i++) {
+            if (siswaMatpel[0][0][i].equals(matpel)) {
+                indeksMatpel = i;
+            }
+        }
+        return indeksMatpel;
     }
     
     /*
