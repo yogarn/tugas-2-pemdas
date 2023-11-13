@@ -13,6 +13,8 @@ public class App {
     /* menyimpan banyak matpel */
     static int banyakSiswaMatpel = 0;
 
+    //satria 
+    
     public static String konversiNilai(double nilai) {
 
     }
@@ -32,7 +34,8 @@ public class App {
     public static int cariMatpel(String matpel) {
 
     }
-
+    // SAMPE SINI
+    
     /*
     nama: nama siswa
     semester: semester, 0 untuk ganjil, 1 untuk genap
