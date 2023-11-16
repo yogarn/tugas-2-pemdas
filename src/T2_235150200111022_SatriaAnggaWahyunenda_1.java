@@ -4,8 +4,8 @@ import java.util.Scanner;
 Nama 1: SATRIA ANGGA WAHYUNENDA (235150200111022)
 Nama 2: YOGA RADITYA NALA (235150201111020)
 
-Tanggung jawab 1: mengerjakan soal nomor 1, membuat method konversiNilai, tambahSiswa, tambahMatpel, printSiswa, printMatpel, printRaportSiswa.
-Tanggung jawab 2: mengerjakan soal nomor 1, membuat method cariSiswa, cariMatpel, isiDataSiswa, cariJuara, hitungNilai, main.
+Tanggung jawab 1: mengerjakan soal nomor 1, membuat method konversiNilai(), tambahSiswa(), tambahMatpel(), printSiswa(), printMatpel(), printRaportSiswa().
+Tanggung jawab 2: mengerjakan soal nomor 1, membuat method cariSiswa(), cariMatpel(), isiDataSiswa(), cariJuara(), hitungNilai(), main().
  
 **/
 
