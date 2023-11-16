@@ -23,7 +23,7 @@ public class T2_235150200111022_SatriaAnggaWahyunenda_1 {
     static int banyakSiswaMatpel = 0;
 
     public static String konversiNilai(double nilai) {
-        if (nilai > 80 && nilai < 100) {
+        if (nilai > 80) {
             return "A";
         } else if (nilai > 75) {
             return "B+";
