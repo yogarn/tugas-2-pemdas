@@ -1,6 +1,14 @@
 import java.util.Scanner;
 
-public class App {
+/** 
+Nama 1: Satria Angga Wahyunenda (235150200111022)
+Nama 2: Yoga Raditya Nala (235150201111020)
+
+Tanggung jawab 1: mengerjakan soal nomor 1, membuat method konversiNilai, tambahSiswa, tambahMatpel, printSiswa, printMatpel, printRaportSiswa.
+Tanggung jawab 2: mengerjakan soal nomor 1, membuat method cariSiswa, cariMatpel, isiDataSiswa, cariJuara, hitungNilai, main.
+ * **/
+
+public class T2_235150200111022_SatriaAnggaWahyunenda_1 {
     final static int MAX_SISWA = 10;
     final static int MAX_MATPEL = 10;
     final static int MAX_SEMESTER = 2;
