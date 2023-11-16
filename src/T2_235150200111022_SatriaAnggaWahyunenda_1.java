@@ -181,9 +181,6 @@ public class T2_235150200111022_SatriaAnggaWahyunenda_1 {
 
         while (true) {
             perintah = input.next();
-            if (perintah.isEmpty()) {
-                System.out.println("kosong");
-            }
             if (perintah.equals("SISWA")) {
                 nama = input.next();
                 tambahSiswa(nama);
