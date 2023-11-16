@@ -221,11 +221,7 @@ public class T2_235150200111022_SatriaAnggaWahyunenda_1 {
                     semesterAngka = 1;
                 }
                 hitungNilai(semesterAngka);
-            } else {
-                break;
             }
         }
-
-        input.close();
     }
 }
