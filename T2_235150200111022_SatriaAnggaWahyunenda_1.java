@@ -23,19 +23,19 @@ public class T2_235150200111022_SatriaAnggaWahyunenda_1 {
     static int banyakSiswaMatpel = 0;
 
     public static String konversiNilai(double nilai) {
-        if (nilai > 80) {
+        if (nilai > 80 && nilai < 100) {
             return "A";
-        } else if (nilai > 75) {
+        } else if (nilai > 75 && nilai <= 80) {
             return "B+";
-        } else if (nilai > 69) {
+        } else if (nilai > 69 && nilai <= 75) {
             return "B";
-        } else if (nilai > 65) {
+        } else if (nilai > 65 && nilai <= 69) {
             return "C+";
-        } else if (nilai > 59) {
+        } else if (nilai > 59 && nilai <= 65) {
             return "C";
-        } else if (nilai > 55) {
+        } else if (nilai > 55 && nilai <= 59) {
             return "D+";
-        } else if (nilai > 40) {
+        } else if (nilai > 40 && nilai <= 55) {
             return "D";
         } else {
             return "E";
