@@ -1,3 +1,4 @@
+
 /** 
 Nama 1: SATRIA ANGGA WAHYUNENDA (235150200111022)
 Nama 2: YOGA RADITYA NALA (235150201111020)
@@ -7,15 +8,21 @@ Tanggung jawab 2: mengerjakan soal nomor 1, membuat method cariSiswa(), cariMatp
  
 **/
 import java.util.Scanner;
+
 public class T2_235150200111022_SatriaAnggaWahyunenda_1 {
     final static int MAX_SISWA = 10;
     final static int MAX_MATPEL = 10;
     final static int MAX_SEMESTER = 2;
     /* menyimpan nama siswa */
     static String[] siswa = new String[MAX_SISWA];
-    /* menyimpan nama matpel per siswa tiap semester, semester ganjil = 0, genap = 1 */
+    /*
+     * menyimpan nama matpel per siswa tiap semester, semester ganjil = 0, genap = 1
+     */
     static String[][][] siswaMatpel = new String[MAX_SISWA][MAX_SEMESTER][MAX_MATPEL];
-    /* menyimpan nilai matpel per siswa tiap semester, semester ganjil = 0; genap = 1 */
+    /*
+     * menyimpan nilai matpel per siswa tiap semester, semester ganjil = 0; genap =
+     * 1
+     */
     static double[][][] siswaMatpelNilai = new double[MAX_SISWA][MAX_SEMESTER][MAX_MATPEL];
     /* menyimpan banyak siswa */
     static int banyakSiswa = 0;
